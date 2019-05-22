@@ -14,9 +14,9 @@ If you just want to use the utility, download the distribution folder's contents
 Run abu.exe from the command or powershell prompt.
 
 ### Help
-To get the command line options:
-abu  
-abu -?
+To get the command line options:  
+**abu**  
+**abu -?**
 
 ### List blobs 
 Update the abu.exe.config file with the storage location you want to list.
@@ -27,3 +27,10 @@ Example:
         <add key="storageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=mystorageaccount;AccountKey=shgdgdhhd77djjdjd99odkkddpuususususd9d9d9dsomelongkey==;" />
         <add key="storageContainer" value="mycontainer" />
 
+The following commands will list all blobs in the specified container:   
+**abu -l**
+**abu -list**
+
+The following commands will list all blobs in the specified container, which start with **temp**:   
+**abu -l temp**
+**abu -list temp**

@@ -24,7 +24,8 @@ The utility works with pattern or patter files.  Use the pattern files where mul
 ### List blobs 
 Update the abu.exe.config file with the storage location you want to list.  
 Update the two keys, **storageConnectionString** and **storageContainer**.  
-Example:  
+Example:
+
     <appSettings>
         <add key="storageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=mystorageaccount;AccountKey=shgdgdhhd77djjdjd99odkkddpuususususd9d9d9dsomelongkey==;" />
         <add key="storageContainer" value="mycontainer" />
@@ -88,7 +89,8 @@ You can download the blobs in just one folder making their names flat.  The slas
 ### Copy blobs
 This feature copies blobs from one Azure storage location to the other.  Update the abu.exe.config file with the source and target storage locations.  
 Update the four keys, **storageConnectionString**, **storageContainer**, **targetStorageConnectionString**, and **targetStorageContainer**.  
-Example:  
+Example:
+
     <appSettings>
         <add key="storageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=mystorageaccount;AccountKey=shgdgdhhd77djjdjd99odkkddpuususususd9d9d9dsomelongkey==;" />
         <add key="storageContainer" value="mycontainer" />

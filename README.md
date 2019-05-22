@@ -32,5 +32,24 @@ The following commands will list all blobs in the specified container:
 **abu -list**
 
 The following commands will list all blobs in the specified container, which start with **temp**:   
-**abu -l temp**
+**abu -l temp**  
 **abu -list temp**
+
+Make a text file, mylist.txt and enter a few patterns.  
+**temp**  
+**chrome**
+
+The following commands will list all blobs in the specified container, which start with **temp** and **chrome**:  
+**abu -lf mylist.txt**  
+**abu -listfile mylist.txt**  
+
+The following commands will list all blobs and their sizes in the specified container, which start with **temp** and **chrome**:  
+**abu -lfs mylist.txt**  
+**abu -listfilesize mylist.txt**  
+
+You can dump the blob listing to another file by redirecting the output:  
+**abu -lf mylist.txt > myoutfile.txt**  
+This is particularly useful when you want to delete some blobs.
+
+### Delete blobs
+Delete blobs option works on specific blobs 

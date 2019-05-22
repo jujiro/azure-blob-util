@@ -18,7 +18,7 @@ To get the command line options:
 **abu**  
 **abu -?**
 
-The utility works with pattern or patter files.  Use the pattern files where multiple patterns are involved.  The pattern file can be located in any folder.  Make sure to specify the fully qualified pattern file name if it is not in the current working folder.  
+The utility works with pattern or pattern file.  Use the pattern file when multiple patterns are involved.  The pattern file can be located in any folder.  Make sure to specify the fully qualified pattern file name if it is not in the current working folder.  
 **Note that the Azure blobs are case sensitive.**
 
 ### List blobs 
@@ -55,15 +55,13 @@ You can dump the blob listing to another file by redirecting the output:
 This is particularly useful when you want to delete some blobs.
 
 ### Delete blobs
-Make sure the storage location is correct in the bu.exe.config file.  Delete blobs option works on specific blobs.  Make a list of blobs in some text file (mylist.txt) keeping one blob per line. 
+Make sure the storage location is correct in the bu.exe.config file.  Delete blobs option does not work on patterns.  You must supply an explicit list of blobs.  Make a list of blobs in some text file (mylist.txt) keeping one blob per line. 
 **temp/blob1.txt**  
 **chrome/folder1/blob2.data**  
 
 To delete these blobs use one of the following commands:  
 **abu -d mylist.txt** or  
-**abu -delete mylist.txt**  
-
-Delete blobs option does not work on patterns.  You must supply an explicit list of blobs.
+**abu -delete mylist.txt**
 
 ### Download blobs
 Make sure the storage location is correct in the bu.exe.config file.  To download blobs using pattern use the following commands:  
@@ -99,5 +97,7 @@ Example:
 
 Make a list of blobs in some text file (mylist.txt.)  use the following commands to copy blobs from source to target.  
 **abu -c mylist.txt** or  
-**abu -copy mylist.txt**  
+**abu -copy mylist.txt**
 
+## Performance
+For deleting, copying, and downloading operations you can get a better performance by increasing concurrency.  This can be done by updaing the abu.exe.config file's **maxThreads** key.  The default is 1.  You have to find a happy balance for this number.  Start with a lower number and keep increasing until the desired throughput is achieved.  Remember, keeping this number too high does not necessarily mean, high performance.
